@@ -1,0 +1,59 @@
+<%- include ('../partials/header') %>
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('https://cdn.pixabay.com/photo/2021/07/07/14/40/dog-6394502_960_720.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Admin Sayfası</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<div class="container">
+    <% adminaksiyonlari.forEach( (action)=>{ %>
+        <div class="row">
+            <div class="col-lg-4 mx-auto">
+                <!-- this.id olarak alırız o classtan aldığımız için-->
+                <button type="button" id="<%=action.actionid%>" onclick="catchID(this.id)" class="btn btn-outline-primary btn-block float-left"><%=action.displayname%></button>
+                    
+          
+                <div class="col-lg-8 mx-auto">
+                  
+                </div>
+
+                
+            </div>
+
+          
+
+        </div>
+        <% }); %>
+        <script>
+
+            function catchID(clicked_id){
+
+                alert(clicked_id+" Butona tıklandı.");
+                if(clicked_id==1){
+
+                    window.location.href='changeHomeImage'; return false;
+
+
+                }
+            }
+
+        </script>
+    
+
+
+</div>
+
+
+
+<%- include ('../partials/footer') %>
